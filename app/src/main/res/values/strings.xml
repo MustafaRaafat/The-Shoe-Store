@@ -13,4 +13,5 @@
     <string name="instruction_title">Instructions</string>
     <string name="instruction_description">This app will give you the power to add all kind of shoes.\njust click on the add button and add your shoe.\n what are you wating for.\nLet\'s go </string>
     <string name="add_new_shoe">Add new shoe</string>
+    <string name="log_out">log out</string>
 </resources>
