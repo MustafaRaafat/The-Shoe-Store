@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">The Shoe</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="email_hint">enter your email</string>
+    <string name="password_hint">enter your password</string>
+    <string name="log_in">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="welcome_description">hi and welcome to The Shoe.\nThe Shoe app is the best app for you.\nThis app is all about shoes.</string>
+    <string name="welcome_button">Let\'s Start</string>
+    <string name="welcome_title">welcome to The shoe</string>
+    <string name="instruction_button">shoe list</string>
+    <string name="instruction_title">Instructions</string>
+    <string name="instruction_description">This app will give you the power to add all kind of shoes.\njust click on the add button and add your shoe.\n what are you wating for.\nLet\'s go </string>
+    <string name="add_new_shoe">Add new shoe</string>
 </resources>
