@@ -56,27 +56,44 @@ class ShoeList : Fragment() {
             val company = TextView(this.context)
             val description = TextView(this.context)
 
-            linerVERTICAL.layoutParams =
-                ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+            var layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+            layoutParams.setMargins(0, 0, 0, 150)
+
+            linerVERTICAL.layoutParams = layoutParams
             linerVERTICAL.orientation = LinearLayout.VERTICAL
 
             name.text = shoe.name
             name.layoutParams =
-                ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+                ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+            name.textSize = 16f
+            name.gravity = Gravity.CENTER
+            name.setTextColor(resources.getColor(R.color.purple_700))
             linerVERTICAL.addView(name)
 
             linerH.layoutParams =
                 ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
             linerH.orientation = LinearLayout.HORIZONTAL
-            size.text = shoe.size
+
+            size.text = "size: ${shoe.size}"
+            size.textSize = 16f
+            size.setTextColor(resources.getColor(R.color.purple_700))
+            size.gravity = Gravity.CENTER
             size.layoutParams = LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
-            company.text = shoe.company
+
+            company.text = "company: ${shoe.company}"
+            company.textSize = 16f
+            company.gravity = Gravity.CENTER
+            company.setTextColor(resources.getColor(R.color.purple_700))
             company.layoutParams = LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
+
             linerH.addView(size)
             linerH.addView(company)
             linerVERTICAL.addView(linerH)
 
             description.text = shoe.description
+            description.textSize = 16f
+            description.gravity = Gravity.CENTER
+            description.setTextColor(resources.getColor(R.color.purple_700))
             description.layoutParams =
                 ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
             linerVERTICAL.addView(description)

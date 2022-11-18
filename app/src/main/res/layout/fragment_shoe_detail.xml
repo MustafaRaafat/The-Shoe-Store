@@ -19,6 +19,7 @@
 
         <TextView
             android:id="@+id/textView"
+            style="@style/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -30,6 +31,7 @@
 
         <TextView
             android:id="@+id/textView2"
+            style="@style/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="name"
@@ -52,6 +54,7 @@
 
         <TextView
             android:id="@+id/textView3"
+            style="@style/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Company"
@@ -73,6 +76,7 @@
 
         <TextView
             android:id="@+id/textView4"
+            style="@style/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="shoe size"
@@ -94,6 +98,7 @@
 
         <TextView
             android:id="@+id/textView5"
+            style="@style/texts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description"
@@ -117,6 +122,7 @@
 
         <Button
             android:id="@+id/cancel_button"
+            style="@style/buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -128,6 +134,7 @@
 
         <Button
             android:id="@+id/save_button"
+            style="@style/buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Save"
