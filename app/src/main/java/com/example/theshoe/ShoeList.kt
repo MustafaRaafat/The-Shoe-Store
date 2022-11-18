@@ -2,16 +2,23 @@ package com.example.theshoe
 
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout.LayoutParams
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.theshoe.databinding.FragmentShoeListBinding
+import com.example.theshoe.models.Shoe
+import com.example.theshoe.viewmodel.ShoeViewModel
 
 class ShoeList : Fragment() {
 
     private var _binding: FragmentShoeListBinding? = null
     private val binding get() = _binding!!
+    private val shoeViewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +40,21 @@ class ShoeList : Fragment() {
         binding.floatingActionButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_shoeList_to_shoeDetail)
         }
+        shoeViewModel.getList().observe(viewLifecycleOwner, Observer { shoe ->
+            updateUi(shoe)
+        })
+
+    }
+
+    private fun updateUi(shoes: List<Shoe>) {
+        for (shoe in shoes) {
+            val name = TextView(this.context)
+            name.text = shoe.name
+            name.layoutParams =
+                ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+            binding.shoeListLinearlayout.addView(name)
+        }
+
 
     }
 
