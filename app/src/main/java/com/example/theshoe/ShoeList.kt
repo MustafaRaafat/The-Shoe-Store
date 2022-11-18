@@ -2,6 +2,7 @@ package com.example.theshoe
 
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
 import android.widget.LinearLayout.LayoutParams
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -48,11 +49,39 @@ class ShoeList : Fragment() {
 
     private fun updateUi(shoes: List<Shoe>) {
         for (shoe in shoes) {
+            val linerVERTICAL = LinearLayout(this.context)
+            val linerH = LinearLayout(this.context)
             val name = TextView(this.context)
+            val size = TextView(this.context)
+            val company = TextView(this.context)
+            val description = TextView(this.context)
+
+            linerVERTICAL.layoutParams =
+                ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+            linerVERTICAL.orientation = LinearLayout.VERTICAL
+
             name.text = shoe.name
             name.layoutParams =
                 ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
-            binding.shoeListLinearlayout.addView(name)
+            linerVERTICAL.addView(name)
+
+            linerH.layoutParams =
+                ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+            linerH.orientation = LinearLayout.HORIZONTAL
+            size.text = shoe.size
+            size.layoutParams = LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
+            company.text = shoe.company
+            company.layoutParams = LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f)
+            linerH.addView(size)
+            linerH.addView(company)
+            linerVERTICAL.addView(linerH)
+
+            description.text = shoe.description
+            description.layoutParams =
+                ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+            linerVERTICAL.addView(description)
+
+            binding.shoeListLinearlayout.addView(linerVERTICAL)
         }
 
 

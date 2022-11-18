@@ -8,8 +8,9 @@ import com.example.theshoe.models.Shoe
 class ShoeViewModel : ViewModel() {
     private var shoesList = mutableListOf<Shoe>()
     private var shoes = MutableLiveData<List<Shoe>>()
+    var shoe = Shoe("", "", "", "")
 
-    fun addToTheList(shoe: Shoe) {
+    fun addToTheList() {
         shoesList.add(shoe)
         shoes.value = shoesList
     }
